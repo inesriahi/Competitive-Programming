@@ -6,7 +6,7 @@ using namespace std;
 
 int n,cases=1;
 char line[250],grid[250][250];
-bool fb=0, fw=0;
+bool fb=0;
 int dr[] = {-1,-1,0,0,1,1}; 
 int dc[] = {-1,0,-1,1,0,1}; 
 
@@ -25,7 +25,7 @@ bool reached(int r,int c, char c1, char c2){
 
 int main(){
     while(sscanf(gets(line), "%d", &n), n){
-        fb = 0,fw = 0;
+        fb = 0;
         for(int i =0;i<n;i++){
             gets(grid[i]);
         }
