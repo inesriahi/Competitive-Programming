@@ -26,7 +26,7 @@ int main()
             AdjList[b].push_back(a);
         }
             int f, s;
-            while(scanf("%d %d", &f, &s), f, s){
+            while(scanf("%d %d", &f, &s), f){
                 c++;
                 map<int,bool> vis;
                 map<int, int> dist;
@@ -47,16 +47,17 @@ int main()
                         }
                     }
                 }
-                int count = 0;
+                int count = 0,nodes = 0;
                 for(std::map<int,int>::iterator iter = dist.begin(); iter != dist.end(); ++iter)
                 {
+                    // nodes++;
                     //printf("%d -> %d ,",iter->first, iter->second);
-                    if(iter->second > s){
+                    if(iter->second <= s){
                         count ++;
                     }
                     
                 }
-                printf("Case %d: %d nodes not reachable from node %d with TTL = %d.\n", c,count,f,s);
+                printf("Case %d: %d nodes not reachable from node %d with TTL = %d.\n", c,AdjList.size()-count,f,s);
 
             }
         
